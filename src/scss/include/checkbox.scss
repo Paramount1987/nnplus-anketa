@@ -5,8 +5,9 @@
   display: inline-block;
   position: relative;
   vertical-align: top;
-  margin: 10px 0 10px 0;
-  padding: 0 0 0 30px;
+  margin: 10px 0;
+  padding: 0 0 0 45px;
+  font-size: 17px;
 }
 .nnplus__checkbox-input{
   position: absolute;
@@ -23,11 +24,11 @@
   content: "";
   position: absolute;
   z-index: 3;
-  top: 0;
+  top: 1px;
   left: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
   border: 1px solid #008d80;
   background: #fff;
 }
@@ -35,10 +36,10 @@
   content: "";
   position: absolute;
   z-index: 4;
-  top: 4px;
-  left: 4px;
-  width: 12px;
-  height: 12px;
+  top: 6px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
   border-radius: 20px;
   background: #008d80;
   @include opacity(0);

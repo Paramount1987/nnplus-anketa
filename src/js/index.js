@@ -89,6 +89,17 @@
     return valid;
   }
 
+  //add remove isvalidprop
+  function toggleIsvalid(wrap, add){
+      if(add){
+        wrap.find('.hidden-fields input').addClass('nnplus__isvalid');
+        wrap.find('.hidden-fields select').addClass('nnplus__isvalid');
+      }else{
+        wrap.find('.hidden-fields input').removeClass('nnplus__isvalid');
+        wrap.find('.hidden-fields select').removeClass('nnplus__isvalid');
+      }
+  }
+
   ////document is ready
   $(document).ready(function(){
     slider.init();
@@ -97,7 +108,7 @@
     $(".nnplus-select").chosen({
       disable_search: true,
       placeholder_text_single: 'Выберите из списка',
-      width: "170px"
+      width: "230px"
     });
   });
   //toCurrentPregnant
@@ -112,6 +123,7 @@
 
     //medications
     if ( $('#medicationsYes').is(':checked') ){
+        
         $('#hidden-fields--medications').slideDown();
     }else{
       $('#hidden-fields--medications').slideUp();
@@ -143,14 +155,22 @@
     }
     //////
     if ( $('#relatedMarriageYes').is(':checked') ){
-      $('#relatedMarriage').slideDown();
+      
+      $('#relatedMarriage').slideDown(200, function(){
+        toggleIsvalid($(this).closest('.nnplus__form-group'), true);
+      });
     }else{
+      toggleIsvalid($(this).closest('.nnplus__form-group'), false);
       $('#relatedMarriage').slideUp();
     }
     //////
     if ( $('#screeningYes').is(':checked') ){
-      $('#hidden-fields--screening').slideDown();
+     
+      $('#hidden-fields--screening').slideDown(200,function(){
+         toggleIsvalid($(this).closest('.nnplus__form-group'), true);
+      });
     }else{
+      toggleIsvalid($(this).closest('.nnplus__form-group'), false);
       $('#hidden-fields--screening').slideUp();
     }
     //////
@@ -161,20 +181,32 @@
     }
     //////
     if ( $('#abortSelfYes').is(':checked') ){
-      $('#hidden-fields--abortSelf').slideDown();
+      
+      $('#hidden-fields--abortSelf').slideDown(200,function(){
+        toggleIsvalid($(this).closest('.nnplus__form-group'), true);
+      });
     }else{
+      toggleIsvalid($(this).closest('.nnplus__form-group'), false);
       $('#hidden-fields--abortSelf').slideUp();
     }
     //////
     if ( $('#abortMedicYes').is(':checked') ){
-      $('#hidden-fields--abortMedic').slideDown();
+      
+      $('#hidden-fields--abortMedic').slideDown(200, function(){
+        toggleIsvalid($(this).closest('.nnplus__form-group'), true);
+      });
     }else{
+      toggleIsvalid($(this).closest('.nnplus__form-group'), false);
       $('#hidden-fields--abortMedic').slideUp();
     }
     //////
     if ( $('#pregnantDevelopYes').is(':checked') ){
-      $('#hidden-fields--pregnantDevelop').slideDown();
+      
+      $('#hidden-fields--pregnantDevelop').slideDown(200,function(){
+        toggleIsvalid($(this).closest('.nnplus__form-group'), true);
+      });
     }else{
+      toggleIsvalid($(this).closest('.nnplus__form-group'), false);
       $('#hidden-fields--pregnantDevelop').slideUp();
     }
     //////
@@ -192,7 +224,14 @@
     //////
   });
   ////end nnplus__checkbox-input
+//cnahge input invalid
+$('body').on('input', '.nnplus__invalid .nnplus__isvalid', function(){
+  $(this).closest('.nnplus__invalid').removeClass('nnplus__invalid');
+});
 
+$('body').on('change', '.nnplus__invalid select.nnplus__isvalid', function(){
+  $(this).closest('.nnplus__invalid').removeClass('nnplus__invalid');
+});
 
 });
 

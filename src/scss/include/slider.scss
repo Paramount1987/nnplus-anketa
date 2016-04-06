@@ -8,18 +8,22 @@
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
 }
+.nnplus-anketa .bottom-margin {margin-bottom: 50px;}
 .nnplus-anketa .w500{  width:500px;}
 .nnplus-anketa .w320{  width:320px;}
 .nnplus-anketa .w210{  width:210px;}
+.nnplus-anketa .w230{  width:230px;}
+.nnplus-anketa .w260{  width:260px;}
 .nnplus-anketa .w170{  width:170px;}
+.nnplus-anketa .font17{  font-size: 17px;}
 .nnplus-anketa .text-center{  text-align: center;}
-.nav-tab--nnplus {    padding: 45px 110px 20px 110px;}
+.nav-tab--nnplus {    padding: 45px 110px 0 110px;}
 
 .nav-tab--nnplus .item {  position: relative;    display: none;}
 
 .nav-tab--nnplus .item.first {    display: block}
 .nav-tab--nnplus .controls{
-  margin:10px 0 0 0;
+  margin:10px -55px 0 -55px;
   font-size: 20px;
   line-height: 24px;
   color:#0170bc;
@@ -38,7 +42,11 @@
 }
 
 .nav-tab--nnplus .pagination {
+  position:relative;
+  top:-15px;
+  width: 300px;
   padding: 0;
+  margin: 0 auto;
   list-style: none;
   text-align: center
 }
@@ -77,13 +85,26 @@
   line-height: 20px;
 }
 .nnplus__form510{
-  width: 510px;
+  margin: 60px 0 0 -20px;
+  width: 540px;
+  .nnplus__form-group{
+    padding-left:20px;
+    padding-right:20px;
+  }
 }
 .nnplus__form-group-title{
+  position:relative;
+  top:6px;
   font-size: 21px;
   line-height: 24px;
   font-weight: normal;
   color: #4d4d4d;
+}
+.hidden-fields .nnplus__form-group-title{
+  top:0;
+}
+.hidden-fields .nnplus__form-group-title.pull-left{
+  top:6px;
 }
 .nnplus__form-group-title--sm{
   font-size: 17px;
@@ -113,7 +134,8 @@
   width: 65px;
   text-align: center;
 }
-.nnplus__form-group{
+.nnplus__form-group,
+.nnplus__form-group--inner{
   margin: 3px 0;
   padding: 10px 0;
 }
@@ -131,17 +153,20 @@
 }
 .nnplus-btn--submit{
   display: block;
-  margin: 20px auto;
+  margin: 50px auto;
   padding: 5px 0;
-  width: 400px;
+  width: 630px;
   color: #fff;
   background: #008d80;
   border: 0;
   outline: 0;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 21px;
+  line-height:45px;
+  font-weight:bold;
 }
 .nnplus-line{
-  background: #000;
+  background: #808080;
   height: 1px;
   margin: 50px -110px 0 -110px;
 }
@@ -156,8 +181,11 @@
   display: none;
 }
 .nnplus-select{
-  width: 170px;
+  width: 230px;
 }
 .nnplus__invalid{
   border: 1px solid red;
 }
+
+.nnplus-anketa .bottom-margin {margin-bottom: 60px;}
+#hidden-fields--screening .nnplus__form-group-title{margin:30px 0;display:block;}
