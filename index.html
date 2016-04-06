@@ -2,50 +2,133 @@
 <html lang="en">
 <link>
     <meta charset="UTF-8">
-    <title>Javascript</title>
+    <title>Nnplus</title>
     <link href="build/css/style.css" rel="stylesheet" media="all"></link>
 </head>
 <body>
-    <div id="demo"></div>
-    <div class="nav-tab">
-        <div class="item first active">
-            Slide1 Slide1
-            <div class="controls">
-                <div class="next">next</div>
+    <form class="nnplus-anketa">
+        <div class="nav-tab--nnplus">
+            <div class="item first active">
+                <h4 class="slide-title">Личная информация</h4>
+                <p class="slide-text">Перед прохождением программы<br />
+                    необходимо заполнить анкету
+                </p>
+                <div class="nnplus__form510">
+                    <div class="nnplus__form-group clearfix">
+                        <span class="nnplus__form-group-title pull-left">Фамилия</span>
+                        <input type="text" class="nnplus__form-input pull-right">
+                    </div>
+                    <div class="nnplus__form-group clearfix">
+                        <span class="nnplus__form-group-title pull-left">Имя</span>
+                        <input type="text" class="nnplus__form-input pull-right">
+                    </div>
+                    <div class="nnplus__form-group clearfix">
+                        <span class="nnplus__form-group-title pull-left">Отчество</span>
+                        <input type="text" class="nnplus__form-input pull-right">
+                    </div>
+                    <div class="nnplus__form-group clearfix">
+                        <span class="nnplus__form-group-title pull-left">Дата рождения</span>
+                        <div class="pull-right w320 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <span class="nnplus__form-group-title--sm">день: </span>
+                                    <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                </div>  
+                                <div class="nnplus__form-group--inline">
+                                    <span class="nnplus__form-group-title--sm">месяц: </span>
+                                    <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                </div> 
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <span class="nnplus__form-group-title--sm">год: </span>
+                                    <input type="text" class="nnplus__form-input nnplus__form-input--md">
+                                </div> 
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group clearfix">
+                        <span class="nnplus__form-group-title pull-left">Номер ЭМК</span>
+                        <input type="text" class="nnplus__form-input pull-right">
+                    </div>    
+                </div>  
+                <div class="controls clearfix">
+                    <div class="next pull-right">Анкета</div>
+                </div>  
             </div>
-        </div>
-        <div class="item">
-            2
-            <div class="controls">
-                <div class="prev">prev</div>
-                <div class="next">next</div>
+            <div class="item">
+                <h4 class="slide-title">Анкета</h4>
+                <p class="slide-text">Внимание!</p>
+                <p class="slide-text">Все поля анкеты обязательны к заполнению. Просим вас отвечать на вопросы честно.<br />
+                    От этого зависит результат скрининига.
+                </p>
+                <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                    <span class="nnplus__form-group-title pull-left">Тип внешности</span>
+                    <div class="pull-right">
+                        <select>
+                            <option>Европейский</option>
+                            <option>Азиатский</option>
+                            <option>Африканский</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="nnplus__form-group nnplus__form-group--white clearfix">
+                    <span class="nnplus__form-group-title pull-left">Группа крови, резус фактор</span>
+                    <div class="pull-right">
+                        <select>
+                            <option>O (I) Rh+</option>
+                            <option>O (I) Rh-</option>
+                            <option>A (II) Rh+</option>
+                            <option>A (II) Rh-</option>
+                            <option>A (III) Rh+</option>
+                            <option>B (III) Rh+</option>
+                            <option>B (III) Rh-</option>
+                            <option>AB (IV) Rh+</option>
+                            <option>AB (IV) Rh-</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                    <span class="nnplus__form-group-title pull-left">Ваш вес</span>
+                    <div class="pull-right">
+                            <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                            <span class="nnplus__form-group-title--sm"> кг</span>
+                    </div>
+                </div>
+                <div class="controls clearfix">
+                    <div class="prev pull-left">Личная информация</div>
+                    <div class="next pull-right">Информация <br />о текущей беременности</div>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <input type="text"/>
-            <div class="controls">
-                <div class="prev">prev</div>
-                <div class="next">next</div>
+            <div class="item">
+                <h4 class="slide-title">Информация <br />о текущей беременности</h4>
+                <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                    <span class="nnplus__form-group-title pull-left">Укажите срок беременности</span>
+                    <div class="pull-right">
+                    </div>
+                </div>
+                <div class="controls clearfix">
+                    <div class="prev pull-left">Анкета</div>
+                    <div class="next pull-right">Генетический анамнез</div>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            4
-            <div class="controls">
-                <div class="prev">prev</div>
-                <div class="next">next</div>
+            <div class="item">
+                <h4 class="slide-title">Генетический анамнез</h4>
+                <div class="controls clearfix">
+                    <div class="prev pull-left">Информация<br/>о текущей беременности</div>
+                    <div class="next pull-right">Скриннинг-2</div>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            5
-            <div class="controls">
-                <div class="prev">prev</div>
+            <div class="item">
+                <h4 class="slide-title">Скрининг-2</h4>
+                <div class="controls clearfix">
+                    <div class="prev pull-left">Генетический анамнез</div>
+                </div>
             </div>
+            <ul class="pagination">
+                <li></li><li></li><li></li><li></li><li></li>
+            </ul>
         </div>
-        <ul class="pagination">
-            <li></li><li></li><li></li><li></li><li></li>
-        </ul>
-    </div>
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    </form>    
+    <script src="build/js/jquery-1.12.js"></script>
     <script src="build/js/index.js"></script>
 </body>
 </html>

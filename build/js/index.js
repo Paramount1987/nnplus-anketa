@@ -2,7 +2,7 @@
 ;jQuery(function($){
 
   var slider = {
-    slides: $('.nav-tab'),
+    slides: $('.nav-tab--nnplus'),
     prev: $('.prev'),
     next: $('.next'),
     pagination: $(".pagination li"),
