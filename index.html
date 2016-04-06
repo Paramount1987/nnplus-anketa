@@ -49,7 +49,8 @@
                         <span class="nnplus__form-group-title pull-left">Номер ЭМК</span>
                         <input type="text" class="nnplus__form-input pull-right">
                     </div>    
-                </div>  
+                </div>
+                <div class="nnplus-line"></div>
                 <div class="controls clearfix">
                     <div class="next pull-right">Анкета</div>
                 </div>  
@@ -63,7 +64,8 @@
                 <div class="nnplus__form-group nnplus__form-group--green clearfix">
                     <span class="nnplus__form-group-title pull-left">Тип внешности</span>
                     <div class="pull-right">
-                        <select>
+                        <select class="nnplus-select">
+                            <option></option>
                             <option>Европейский</option>
                             <option>Азиатский</option>
                             <option>Африканский</option>
@@ -73,7 +75,8 @@
                 <div class="nnplus__form-group nnplus__form-group--white clearfix">
                     <span class="nnplus__form-group-title pull-left">Группа крови, резус фактор</span>
                     <div class="pull-right">
-                        <select>
+                        <select class="nnplus-select">
+                            <option></option>
                             <option>O (I) Rh+</option>
                             <option>O (I) Rh-</option>
                             <option>A (II) Rh+</option>
@@ -89,29 +92,593 @@
                 <div class="nnplus__form-group nnplus__form-group--green clearfix">
                     <span class="nnplus__form-group-title pull-left">Ваш вес</span>
                     <div class="pull-right">
+                         <div class="w170">
                             <input type="text" class="nnplus__form-input nnplus__form-input--sm">
                             <span class="nnplus__form-group-title--sm"> кг</span>
+                         </div>
                     </div>
                 </div>
+                <div class="nnplus-line"></div>
                 <div class="controls clearfix">
                     <div class="prev pull-left">Личная информация</div>
                     <div class="next pull-right">Информация <br />о текущей беременности</div>
                 </div>
             </div>
             <div class="item">
-                <h4 class="slide-title">Информация <br />о текущей беременности</h4>
-                <div class="nnplus__form-group nnplus__form-group--green clearfix">
-                    <span class="nnplus__form-group-title pull-left">Укажите срок беременности</span>
-                    <div class="pull-right">
+                <div class="nnplus__current-pregnant">
+                    <h4 class="slide-title">Информация <br />о текущей беременности</h4>
+                    <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                        <span class="nnplus__form-group-title pull-left">Укажите срок беременности</span>
+                        <div class="pull-right w210 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <span class="nnplus__form-group-title--sm">недель: </span>
+                                    <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                </div>
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <span class="nnplus__form-group-title--sm">дней: </span>
+                                    <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--white">
+                        <span class="nnplus__form-group-title">Отметьте были ли инфекционные заболевания<br />в данной беременности </span>
+                        <div class="nnplus__form-group-checkbox w500">
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="rubella">
+                                <label class="nnplus__checkbox-label" for="rubella">Краснуха</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="varicella">
+                                <label class="nnplus__checkbox-label" for="varicella">Ветряная оспа</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="hiv">
+                                <label class="nnplus__checkbox-label" for="hiv">ВИЧ</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="hepatite">
+                                <label class="nnplus__checkbox-label" for="hepatite">Гепатит B и С</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                        <span class="nnplus__form-group-title pull-left">Принимали ли лекарственные препараты<br />во время беременности?</span>
+                        <div class="pull-right w170 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="medicationsYes" name="medications">
+                                        <label class="nnplus__checkbox-label" for="medicationsYes">да</label>
+                                    </div>
+                                </div>
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="medicationsNo" name="medications" checked>
+                                        <label class="nnplus__checkbox-label" for="medicationsNo">нет</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="hidden-fields" id="hidden-fields--medications">
+                            <p class="nnplus__form-group-title--sm">Укажите какие:</p>
+                            <textarea class="nnplus__form-group-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--white">
+                        <span class="nnplus__form-group-title">Особенности течения<br />настоящей беременности:</span>
+                        <div class="nnplus__form-group-checkbox">
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="toxicosis">
+                                <label class="nnplus__checkbox-label" for="toxicosis">Токсикоз</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="polyhydramnios">
+                                <label class="nnplus__checkbox-label" for="polyhydramnios">Многоводие</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="smoking">
+                                <label class="nnplus__checkbox-label" for="smoking">Курение во время беременности</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="diabetes">
+                                <label class="nnplus__checkbox-label" for="diabetes">Диабет</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="eco">
+                                <label class="nnplus__checkbox-label" for="eco">ЭКО</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="hormonal">
+                                <label class="nnplus__checkbox-label" for="hormonal">Гормональное <br />лечение во время беременности</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="other">
+                                <label class="nnplus__checkbox-label" for="other">Другое</label>
+                            </div>
+                            <div class="hidden-fields" id="hidden-fields--other">
+                                <p class="nnplus__form-group-title--sm">Пожалуйста, опишите ваше текущее состояние:</p>
+                                <textarea class="nnplus__form-group-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                        <span class="nnplus__form-group-title pull-left">Угроза прерывания</span>
+                        <div class="pull-right w170 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="interruptYes" name="interrupt">
+                                        <label class="nnplus__checkbox-label" for="interruptYes">да</label>
+                                    </div>
+                                </div>
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="interruptNo" name="interrupt" checked>
+                                        <label class="nnplus__checkbox-label" for="interruptNo">нет</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--white clearfix">
+                        <span class="nnplus__form-group-title pull-left">Профессиональные вредности</span>
+                        <div class="pull-right">
+                            <select class="nnplus-select">
+                                <option></option>
+                                <option>Облучение</option>
+                                <option>Работа с химикатами (заводы и т.д.)</option>
+                                <option>Радиация</option>
+                                <option>Нет</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                        <span class="nnplus__form-group-title pull-left">Это ваша первая беременность?</span>
+                        <div class="pull-right w170 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="firstPregnancyYes" name="firstPregnancy" checked>
+                                        <label class="nnplus__checkbox-label" for="firstPregnancyYes">да</label>
+                                    </div>
+                                </div>
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="firstPregnancyNo" name="firstPregnancy">
+                                        <label class="nnplus__checkbox-label" for="firstPregnancyNo">нет</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnplus-line"></div>
+                    <div class="controls clearfix">
+                        <div class="prev pull-left">Анкета</div>
+                        <div class="next pull-right">Генетический анамнез</div>
                     </div>
                 </div>
-                <div class="controls clearfix">
-                    <div class="prev pull-left">Анкета</div>
-                    <div class="next pull-right">Генетический анамнез</div>
+                <div class="nnplus__previous-pregnant">
+                    <h4 class="slide-title">Информация <br />о предыдущих беременностях</h4>
+                    <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                        <span class="nnplus__form-group-title pull-left">Беременность по счету</span>
+                        <div class="pull-right">
+                             <input type="text" class="nnplus__form-input w210">
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--white clearfix">
+                        <span class="nnplus__form-group-title pull-left">Количество родов</span>
+                        <div class="pull-right">
+                            <input type="text" class="nnplus__form-input w210">
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                        <span class="nnplus__form-group-title pull-left">Укажите годы, в которых были роды</span>
+                        <div class="pull-right">
+                            <input type="text" class="nnplus__form-input w210">
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--white clearfix">
+                        <span class="nnplus__form-group-title pull-left">Ребенок (дети) здоров (здоровы)</span>
+                        <div class="pull-right w170 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="childHealthYes" name="childHealth" checked>
+                                        <label class="nnplus__checkbox-label" for="">да</label>
+                                    </div>
+                                </div>
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="childHealthNo" name="childHealth">
+                                        <label class="nnplus__checkbox-label" for="">нет</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="hidden-fields" id="hidden-fields--childHealth">
+                            <p class="nnplus__form-group-title--sm">Генетический диагноз ребенка (детей):</p>
+                            <textarea class="nnplus__form-group-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                        <span class="nnplus__form-group-title pull-left">Самопроизвольные аборты</span>
+                        <div class="pull-right w170 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="abortSelfYes" name="abortSelf">
+                                        <label class="nnplus__checkbox-label" for="">да</label>
+                                    </div>
+                                </div>
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="abortSelfNo" name="abortSelf" checked>
+                                        <label class="nnplus__checkbox-label" for="">нет</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="hidden-fields" id="hidden-fields--abortSelf">
+                            <div class="nnplus__form-group clearfix">
+                                <span class="nnplus__form-group-title pull-left">На сроках</span>
+                                <div class="pull-right w210 text-center">
+                                    <div class="clearfix">
+                                        <div class="nnplus__form-group--inline pull-left">
+                                            <span class="nnplus__form-group-title--sm">недель: </span>
+                                            <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                        </div>
+                                        <div class="nnplus__form-group--inline pull-right">
+                                            <span class="nnplus__form-group-title--sm">дней: </span>
+                                            <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--white clearfix">
+                        <span class="nnplus__form-group-title pull-left">Медицинский аборт</span>
+                        <div class="pull-right w170 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="abortMedicYes" name="abortMedic">
+                                        <label class="nnplus__checkbox-label" for="">да</label>
+                                    </div>
+                                </div>
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="abortMedicNo" name="abortMedic" checked>
+                                        <label class="nnplus__checkbox-label" for="">нет</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="hidden-fields" id="hidden-fields--abortMedic">
+                            <div class="nnplus__form-group--abortMedic">
+                                <div class="nnplus__form-group clearfix">
+                                    <span class="nnplus__form-group-title">Год проведения аборта:</span>
+                                    <input type="text" class="nnplus__form-input nnplus__form-input--md">
+                                </div>
+                                <div class="nnplus__form-group clearfix">
+                                    <span class="nnplus__form-group-title pull-left">Срок беременности, на котором проводился аборт:</span>
+                                    <div class="pull-right w210 text-center">
+                                        <div class="clearfix">
+                                            <div class="nnplus__form-group--inline pull-left">
+                                                <span class="nnplus__form-group-title--sm">недель: </span>
+                                                <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                            </div>
+                                            <div class="nnplus__form-group--inline pull-right">
+                                                <span class="nnplus__form-group-title--sm">дней: </span>
+                                                <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                        <span class="nnplus__form-group-title pull-left">Беременность неразвивающая</span>
+                        <div class="pull-right w170 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="pregnantDevelopYes" name="pregnantDevelop">
+                                        <label class="nnplus__checkbox-label" for="">да</label>
+                                    </div>
+                                </div>
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="pregnantDevelopNo" name="pregnantDevelop" checked>
+                                        <label class="nnplus__checkbox-label" for="">нет</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="hidden-fields" id="hidden-fields--pregnantDevelop">
+                            <div class="nnplus__form-group--pregnantDevelop">
+                                <div class="nnplus__form-group clearfix">
+                                    <span class="nnplus__form-group-title">Беременность в годы:</span>
+                                    <input type="text" class="nnplus__form-input nnplus__form-input--md">
+                                </div>
+                                <div class="nnplus__form-group clearfix">
+                                    <span class="nnplus__form-group-title pull-left">Беременность на сроках:</span>
+                                    <div class="pull-right w210 text-center">
+                                        <div class="clearfix">
+                                            <div class="nnplus__form-group--inline pull-left">
+                                                <span class="nnplus__form-group-title--sm">недель: </span>
+                                                <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                            </div>
+                                            <div class="nnplus__form-group--inline pull-right">
+                                                <span class="nnplus__form-group-title--sm">дней: </span>
+                                                <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnplus__form-group nnplus__form-group--white clearfix">
+                        <span class="nnplus__form-group-title pull-left">Кариотип абортивного материала</span>
+                        <div class="pull-right w170 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="abortKaryotypingYes" name="abortKaryotyping">
+                                        <label class="nnplus__checkbox-label" for="abortKaryotypingYes">да</label>
+                                    </div>
+                                </div>
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <div class="nnplus__checkbox">
+                                        <input type="radio" class="nnplus__checkbox-input" id="abortKaryotypingNo" name="abortKaryotyping" checked>
+                                        <label class="nnplus__checkbox-label" for="abortKaryotypingNo">нет</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="hidden-fields" id="hidden-fields--abortKaryotyping">
+                            <p class="nnplus__form-group-title--sm">Результат:</p>
+                            <textarea class="nnplus__form-group-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="nnplus-line"></div>
+                    <div class="controls clearfix">
+                        <div class="toCurrentPregnant pull-left">Информация<br />о текущей беременности</div>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <h4 class="slide-title">Генетический анамнез</h4>
+                <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                    <span class="nnplus__form-group-title pull-left">Кариотипирование супругов</span>
+                    <div class="pull-right w170 text-center">
+                        <div class="clearfix">
+                            <div class="nnplus__form-group--inline pull-left">
+                                <div class="nnplus__checkbox">
+                                    <input type="radio" class="nnplus__checkbox-input" id="karyotypingYes" name="karyotyping">
+                                    <label class="nnplus__checkbox-label" for="karyotypingYes">да</label>
+                                </div>
+                            </div>
+                            <div class="nnplus__form-group--inline pull-right">
+                                <div class="nnplus__checkbox">
+                                    <input type="radio" class="nnplus__checkbox-input" id="karyotypingNo" name="karyotyping" checked>
+                                    <label class="nnplus__checkbox-label" for="karyotypingNo">нет</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="hidden-fields" id="hidden-fields--karyotyping">
+                        <p class="nnplus__form-group-title--sm">Результат мужа:</p>
+                        <textarea class="nnplus__form-group-textarea"></textarea>
+                        <p class="nnplus__form-group-title--sm">Результат жены:</p>
+                        <textarea class="nnplus__form-group-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="nnplus__form-group nnplus__form-group--white clearfix">
+                    <span class="nnplus__form-group-title pull-left">Есть ли генетические заболевания,<br />которые есть у Вас, супруга или<br />у близких родственников?</span>
+                    <div class="pull-right w170 text-center">
+                        <div class="clearfix">
+                            <div class="nnplus__form-group--inline pull-left">
+                                <div class="nnplus__checkbox">
+                                    <input type="radio" class="nnplus__checkbox-input" id="geneticDiseaseYes" name="geneticDisease">
+                                    <label class="nnplus__checkbox-label" for="geneticDiseaseYes">да</label>
+                                </div>
+                            </div>
+                            <div class="nnplus__form-group--inline pull-right">
+                                <div class="nnplus__checkbox">
+                                    <input type="radio" class="nnplus__checkbox-input" id="geneticDiseaseNo" name="geneticDisease" checked>
+                                    <label class="nnplus__checkbox-label" for="geneticDiseaseNo">нет</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="hidden-fields" id="hidden-fields--geneticDisease">
+                        <div class="nnplus__form-group-checkbox">
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Хорея Гетингтона</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Синдром Жильбера</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Ахондропозия</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Гемофилия</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Нейрофиброматоз</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Полидактилия</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Целиакия</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Адреногенитальный синдром</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Фенилкетоурия</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Синдром Морфана</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Врожденный гипертиреоз</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Муковицидоз</label>
+                            </div>
+                            <div class="nnplus__checkbox w210">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Галактомизия</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                    <span class="nnplus__form-group-title pull-left">Есть ли хромосомные патологии<br />которые есть у Вас, супруга или<br />у близких родственников?</span>
+                    <div class="pull-right w170 text-center">
+                        <div class="clearfix">
+                            <div class="nnplus__form-group--inline pull-left">
+                                <div class="nnplus__checkbox">
+                                    <input type="radio" class="nnplus__checkbox-input" id="chromosomalAbnormalitiesYes" name="chromosomalAbnormalities">
+                                    <label class="nnplus__checkbox-label" for="chromosomalAbnormalitiesYes">да</label>
+                                </div>
+                            </div>
+                            <div class="nnplus__form-group--inline pull-right">
+                                <div class="nnplus__checkbox">
+                                    <input type="radio" class="nnplus__checkbox-input" id="chromosomalAbnormalitiesNo" name="chromosomalAbnormalities" checked>
+                                    <label class="nnplus__checkbox-label" for="chromosomalAbnormalitiesNo">нет</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="hidden-fields" id="hidden-fields--chromosomalAbnormalities">
+                        <div class="nnplus__form-group-checkbox">
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q90<br />Синдром Дауна</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q96.0<br />Кариотип 45,X</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q90.0<br />Трисомия 21,<br />мейотическое нерасхождение</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q96.3<br />Мозаицизм 45,X/46,XX или XY</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q91<br />Синдром Эдвардса<br />и синдром Патау</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q97.0<br />Кариотип 47,XXX</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q91.4<br />Трисомия 13,<br />мейотическое нерасхождение</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q97.3<br />Женщина с 46,XY-кариотипом</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q92.7<br />Триплоидия и полиплоидия</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q98.0<br />Синдром Клайнфелтера,<br />кариотип 47,XXY</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q93.4<br />Делеция короткого плеча<br />хромосомы 5</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q98.3<br />Другой мужчина с 46,XX-кариотипом</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q95.0<br />Сбалансированные транслокации<br />и инсерции у нормального индивида</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q98.5<br />Кариотип 47,XYY</label>
+                            </div>
+                            <div class="nnplus__checkbox w320">
+                                <input type="checkbox" class="nnplus__checkbox-input" id="">
+                                <label class="nnplus__checkbox-label" for="">Q96<br />Синдром Тернера</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nnplus__form-group nnplus__form-group--white clearfix">
+                    <span class="nnplus__form-group-title pull-left">Родственный брак?</span>
+                    <div class="pull-right w170 text-center">
+                        <div class="clearfix">
+                            <div class="nnplus__form-group--inline pull-left">
+                                <div class="nnplus__checkbox">
+                                    <input type="radio" class="nnplus__checkbox-input" id="relatedMarriageYes" name="relatedMarriage">
+                                    <label class="nnplus__checkbox-label" for="relatedMarriageYes">да</label>
+                                </div>
+                            </div>
+                            <div class="nnplus__form-group--inline pull-right">
+                                <div class="nnplus__checkbox">
+                                    <input type="radio" class="nnplus__checkbox-input" id="relatedMarriageNo" name="relatedMarriage" checked>
+                                    <label class="nnplus__checkbox-label" for="relatedMarriageNo">нет</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nnplus__form-group nnplus__form-group--white hidden-fields clearfix" id="relatedMarriage">
+                    <span class="nnplus__form-group-title pull-left">Доля генов (общее гены для родственников)</span>
+                    <div class="pull-right">
+                        <select class="nnplus-select">
+                            <option></option>
+                            <option>1/2 - родные брат и сестра</option>
+                            <option>1/4 - двоюродные</option>
+                            <option>1/6 - троюродные</option>
+                            <option>1/8 - четвероюродные</option>
+                            <option>1/16 - пятироюродные</option>
+                            <option>1/32 - шестиоюродные</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="nnplus-line"></div>
                 <div class="controls clearfix">
                     <div class="prev pull-left">Информация<br/>о текущей беременности</div>
                     <div class="next pull-right">Скриннинг-2</div>
@@ -119,6 +686,50 @@
             </div>
             <div class="item">
                 <h4 class="slide-title">Скрининг-2</h4>
+                <div class="nnplus__form-group nnplus__form-group--green clearfix">
+                    <span class="nnplus__form-group-title pull-left">Вы проходите второй скрининг<br />на сроке 16-18 недель?</span>
+                    <div class="pull-right w170 text-center">
+                        <div class="clearfix">
+                            <div class="nnplus__form-group--inline pull-left">
+                                <div class="nnplus__checkbox">
+                                    <input type="radio" class="nnplus__checkbox-input" id="screeningYes" name="screening">
+                                    <label class="nnplus__checkbox-label" for="screeningYes">да</label>
+                                </div>
+                            </div>
+                            <div class="nnplus__form-group--inline pull-right">
+                                <div class="nnplus__checkbox">
+                                    <input type="radio" class="nnplus__checkbox-input" id="screeningNo" name="screening" checked>
+                                    <label class="nnplus__checkbox-label" for="screeningNo">нет</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="hidden-fields" id="hidden-fields--screening">
+                        <span class="nnplus__form-group-title">Укажите дату УЗИ, которое проводилось на сроке 11-13 недель:</span>
+                        <div class="w320 text-center">
+                            <div class="clearfix">
+                                <div class="nnplus__form-group--inline pull-left">
+                                    <span class="nnplus__form-group-title--sm">день: </span>
+                                    <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                </div>
+                                <div class="nnplus__form-group--inline">
+                                    <span class="nnplus__form-group-title--sm">месяц: </span>
+                                    <input type="text" class="nnplus__form-input nnplus__form-input--sm">
+                                </div>
+                                <div class="nnplus__form-group--inline pull-right">
+                                    <span class="nnplus__form-group-title--sm">год: </span>
+                                    <input type="text" class="nnplus__form-input nnplus__form-input--md">
+                                </div>
+                            </div>
+                        </div>
+                        <span class="nnplus__form-group-title">Укажите данные КТР из вашего УЗИ<br />на сроке 11-13 недель:</span>
+                        <p class="nnplus__form-group-title--sm">Данные КТР:</p>
+                        <textarea class="nnplus__form-group-textarea"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="nnplus-btn--submit">Отправить анкету</button>
+                <div class="nnplus-line"></div>
                 <div class="controls clearfix">
                     <div class="prev pull-left">Генетический анамнез</div>
                 </div>
@@ -129,6 +740,7 @@
         </div>
     </form>    
     <script src="build/js/jquery-1.12.js"></script>
+    <script src="build/js/lib.js"></script>
     <script src="build/js/index.js"></script>
 </body>
 </html>
