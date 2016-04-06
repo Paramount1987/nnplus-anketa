@@ -22,13 +22,22 @@
         slideTo.addClass('active').fadeIn(200)
       });
     },
-
+    changePagination: function(curIndex, nextIndex){
+       this.pagination.eq(curIndex).addClass('active-li').removeClass('current-li');
+       this.pagination.eq(nextIndex).addClass('current-li');
+    },
     clickPrev: function(){
       var that = this;
       $('.prev').click(function(){
         var current = $(this).closest('.item');
         var next = $(this).closest('.item').prev('.item');
-        that.slideNext(current,next);
+        var allowSlide = nnplusValid(current.find('.nnplus__isvalid'));
+        if( !allowSlide ) {
+          return
+        }else{
+          that.changePagination( $('.pagination').find('.current-li').index() , next.index());
+          that.slideNext(current,next);
+        }
       });
     },
     clickNext: function(){
@@ -36,7 +45,14 @@
       $('.next').click(function(){
         var current = $(this).closest('.item');
         var next = $(this).closest('.item').next('.item');
-        that.slideNext(current,next);
+        var allowSlide = nnplusValid(current.find('.nnplus__isvalid'));
+        if( !allowSlide ) {
+          return
+        }else{
+          that.changePagination( $('.pagination').find('.current-li').index() , next.index());
+          that.slideNext(current,next);
+        }
+
       });
     },
     clickPagination: function(){
@@ -44,15 +60,37 @@
       this.pagination.click(function(){
         var goIndex = that.slides.find('.item').eq($(this).index());
         var current = that.slides.find('.active');
+        var allowSlide = nnplusValid(current.find('.nnplus__isvalid'));
 
-        that.slideTo(current, goIndex);
-
+        if( !allowSlide || !$(this).hasClass('active-li')) {
+          return
+        }else{
+          that.changePagination( $('.pagination').find('.current-li').index() , $(this).index());
+          that.slideTo(current, goIndex);
+        }
       });
     }
 
   };
 
 
+  ///check validation
+  function nnplusValid(arr){
+    var valid = true;
+
+      arr.each(function(){
+
+         var value = $(this).val();
+            if (!value){
+              valid = false;
+              $(this).closest('.nnplus__form-group').addClass('nnplus__invalid');
+            }
+      });
+
+    return valid;
+  }
+
+  ////document is ready
   $(document).ready(function(){
     slider.init();
 

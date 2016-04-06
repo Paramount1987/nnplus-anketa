@@ -51,7 +51,17 @@
   height: 8px;
   border-radius: 8px;
   border: 1px solid #b3b3b3;
-  cursor: pointer
+  background: #fff;
+  cursor: pointer;
+  &.current-li,
+  &.current-li.active-li{
+    background: #008d80;
+    border-color: #008d80;
+  }
+  &.active-li{
+    background: #fff;
+    border-color: #008d80;
+  }
 }
 .nav-tab--nnplus .slide-title{
   margin: 15px 0;
@@ -90,28 +100,33 @@
   outline: 0;
   padding: 0 10px;
   color:#808080;
+  &:focus{
+    border-color: #008d80;
+  }
 }
 .nnplus__form-input--sm{
   width: 45px;
   text-align: center;
+  padding: 0 5px;
 }
 .nnplus__form-input--md{
   width: 65px;
   text-align: center;
 }
 .nnplus__form-group{
+  margin: 3px 0;
   padding: 10px 0;
 }
 .nnplus__form-group--inline{
   display: inline-block;
 }
 .nnplus__form-group--green{
-  margin: 0 -25px;
+  margin: 3px -25px;
   padding: 10px 25px;
   background: rgba(0,169,157,.1);
 }
 .nnplus__form-group--white{
-  margin: 0 -25px;
+  margin: 3px -25px;
   padding:10px 25px;
 }
 .nnplus-btn--submit{
@@ -142,4 +157,7 @@
 }
 .nnplus-select{
   width: 170px;
+}
+.nnplus__invalid{
+  border: 1px solid red;
 }
