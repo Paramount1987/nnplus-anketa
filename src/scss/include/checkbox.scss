@@ -18,6 +18,7 @@
   height: 20px;
   display: inline-block;
   -webkit-appearance: none;
+  cursor: pointer;
   @include opacity(0);
 }
 .nnplus__checkbox-label:after{

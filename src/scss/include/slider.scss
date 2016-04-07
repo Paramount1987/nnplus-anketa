@@ -28,15 +28,51 @@
   line-height: 24px;
   color:#0170bc;
 }
-.nav-tab--nnplus .controls .next{
-  text-align: right;
+
+.nav-tab--nnplus .controls .prev:after,
+.nav-tab--nnplus .controls .next:after{
+    content:'';
+    position:absolute;
+    top:3px;
+    display: inline-block;
+    width:10px;
+    height:18px;
+    background: url('../img/arrows.svg') no-repeat;
+    background-size: 30px 40px;
 }
+
+.nav-tab--nnplus .controls .next{
+  padding-right:15px;
+  text-align: right;
+  &:after{
+    right:0;
+    background-position: -19px 1px;
+  }
+  &:hover:after{
+    background-position: -19px -20px;
+  }
+}
+.nav-tab--nnplus .controls .prev{
+  padding-left:15px;
+  &:after{
+    left:0;
+    background-position: -2px 1px;
+  }
+  &:hover:after{
+    background-position: -2px -20px;
+  }
+}
+
 .nav-tab--nnplus .controls div {
+  position: relative;
   display: inline-block;
   vertical-align: top;
   font-size: 20px;
-  cursor: pointer
+  cursor: pointer;
 }
+
+
+
 .nav-tab--nnplus .controls div:hover{
   color:#008d80;
 }
@@ -189,3 +225,12 @@
 
 .nnplus-anketa .bottom-margin {margin-bottom: 60px;}
 #hidden-fields--screening .nnplus__form-group-title{margin:30px 0;display:block;}
+
+.nnplus-anketa .error-message{
+  border: 1px solid red;
+  color: red;
+  font-size:21px;
+  line-height: 55px;
+  margin: 10px -25px 10px -25px;
+  padding: 0 25px;
+}

@@ -4,3 +4,33 @@
 .nnplus__previous-pregnant{
   display: none;
 }
+
+.nnplus__form-group--abortMedic,
+.nnplus__form-group--pregnantDevelop{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.addYear{
+  position:relative;
+  width:145px;
+  margin: 15px 0 15px 528px;
+  padding-left: 25px;
+  color: #008d80;
+  font-size:17px;
+  cursor: pointer;
+  &:after{
+    content:'+';
+    position:absolute;
+    z-index:10;
+    top: 1px;
+    left:0;
+    width:20px;
+    height:20px;
+    border:1px solid #008d80;
+    border-radius: 3px;
+    font-size:27px;
+    line-height:18px;
+    text-align:center;
+  }
+}
