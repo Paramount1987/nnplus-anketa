@@ -33,7 +33,7 @@
 .nav-tab--nnplus .controls .next:after{
     content:'';
     position:absolute;
-    top:3px;
+    top: 2px;
     display: inline-block;
     width:10px;
     height:18px;
@@ -68,6 +68,7 @@
   display: inline-block;
   vertical-align: top;
   font-size: 20px;
+  line-height: 22px;
   cursor: pointer;
 }
 
@@ -121,7 +122,7 @@
   line-height: 20px;
 }
 .nnplus__form510{
-  margin: 60px 0 0 -20px;
+  margin: 60px 0 0 -25px;
   width: 540px;
   .nnplus__form-group{
     padding-left:20px;
@@ -136,6 +137,10 @@
   font-weight: normal;
   color: #4d4d4d;
 }
+.nnplus__form-group-title--double{
+  top: 1px;
+}
+
 .hidden-fields .nnplus__form-group-title{
   top:0;
 }
@@ -212,6 +217,7 @@
   height: 100px;
   outline: 0;
   padding: 5px 10px;
+  font-size: 17px;
 }
 .hidden-fields{
   display: none;
@@ -221,6 +227,7 @@
 }
 .nnplus__invalid{
   border: 1px solid red;
+  border-radius:3px;
 }
 
 .nnplus-anketa .bottom-margin {margin-bottom: 60px;}
@@ -228,6 +235,7 @@
 
 .nnplus-anketa .error-message{
   border: 1px solid red;
+  border-radius: 3px;
   color: red;
   font-size:21px;
   line-height: 55px;

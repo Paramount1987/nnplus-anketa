@@ -6,6 +6,15 @@
     prev: $('.prev'),
     next: $('.next'),
     pagination: $(".pagination li"),
+    currPregnant: $(".nnplus__current-pregnant"),
+    prevPregnant: $(".nnplus__previous-pregnant"),
+    isCurrPregnant: true,
+    isPrevPregnant: false,
+    setPregnant: function(curr, prev){
+      this.isCurrPregnant = curr;
+      this.isPrevPregnant = prev;
+      console.log(this.prevPregnant);
+    },
     init: function(){
       this.clickPrev();
       this.clickNext();
@@ -29,14 +38,24 @@
     clickPrev: function(){
       var that = this;
       $('.prev').click(function(){
+
         var current = $(this).closest('.item');
         var next = $(this).closest('.item').prev('.item');
+
+        if ( $(this).closest('.nnplus__previous-pregnant').length ){
+            current = $(this).closest('.item__part');
+            next = $(this).closest('.item__part').prev('.item__part');
+        }
+
         var allowSlide = nnplusValid(current.find('.nnplus__isvalid'));
         if( !allowSlide ) {
           that.addErrorMessage(current);
           return;
         }else{
-          that.changePagination( $('.pagination').find('.current-li').index() , next.index());
+
+          if ( !$(this).closest('.nnplus__previous-pregnant').length )
+              that.changePagination( $('.pagination').find('.current-li').index() , next.index());
+
           that.slideNext(current,next);
         }
       });
@@ -44,14 +63,34 @@
     clickNext: function(){
       var that = this;
       $('.next').click(function(){
+
         var current = $(this).closest('.item');
         var next = $(this).closest('.item').next('.item');
+ 
+        if ( that.isPrevPregnant && $(this).closest('.nnplus__current-pregnant').length ){
+            current = $(this).closest('.item__part');
+            next = $(this).closest('.item__part').next('.item__part');
+
+            $('.nnplus__previous-pregnant .nnplus__form-group').each(function(index){
+                if( !$(this).find('.hidden-fields').length){
+                  $(this).find('.nnplus__form-input').addClass('nnplus__isvalid');
+                }
+            });
+        }
+
+
         var allowSlide = nnplusValid(current.find('.nnplus__isvalid'));
         if( !allowSlide ) {
           that.addErrorMessage(current);
           return;
         }else{
-          that.changePagination( $('.pagination').find('.current-li').index() , next.index());
+          if ( that.isPrevPregnant && $(this).closest('.nnplus__current-pregnant').length ){
+              console.log("prev");
+          }else{
+            that.changePagination( $('.pagination').find('.current-li').index() , next.index());
+          }
+              
+
           that.slideNext(current,next);
         }
 
@@ -85,6 +124,7 @@
 
 //error message template
 var errorMessage = $('<div class="error-message">Ответье, пожалуйста на все вопросы!</div>');
+
  function removeError(parent){
 
   if( !parent.find('.nnplus__invalid').length ){
@@ -120,9 +160,9 @@ var errorMessage = $('<div class="error-message">Ответье, пожалуй�
   }
 
   ////abort Template
-  var abortTemplate1 = '<div class="nnplus__form-group--abortMedic"><div class="nnplus__form-group clearfix"><span class="nnplus__form-group-title">Год проведения аборта: </span> <input type="text" class="nnplus__form-input nnplus__form-input--md"></div><div class="nnplus__form-group clearfix"><span class="nnplus__form-group-title pull-left font17">Срок беременности, на котором проводился аборт:</span><div class="pull-right w230 text-center"><div class="clearfix"><div class="nnplus__form-group--inline pull-left"><span class="nnplus__form-group-title--sm">недель: </span><input type="text" class="nnplus__form-input nnplus__form-input--sm"></div><div class="nnplus__form-group--inline pull-right"><span class="nnplus__form-group-title--sm">дней: </span><input type="text" class="nnplus__form-input nnplus__form-input--sm"></div></div></div></div></div>';
+  var abortTemplate1 = '<div class="nnplus__form-group--abortMedic"><div class="remove-bl"></div><div class="nnplus__form-group clearfix"><span class="nnplus__form-group-title">Год проведения аборта: </span> <input type="text" class="nnplus__form-input nnplus__form-input--md"></div><div class="nnplus__form-group clearfix"><span class="nnplus__form-group-title pull-left font17">Срок беременности, на котором проводился аборт:</span><div class="pull-right w230 text-center"><div class="clearfix"><div class="nnplus__form-group--inline pull-left"><span class="nnplus__form-group-title--sm">недель: </span><input type="text" class="nnplus__form-input nnplus__form-input--sm"></div><div class="nnplus__form-group--inline pull-right"><span class="nnplus__form-group-title--sm">дней: </span><input type="text" class="nnplus__form-input nnplus__form-input--sm"></div></div></div></div></div>';
 
- var abortTemplate2 = '<div class="nnplus__form-group--pregnantDevelop"><div class="nnplus__form-group clearfix"><span class="nnplus__form-group-title">Беременность в годы: </span> <input type="text" class="nnplus__form-input nnplus__form-input--md"></div><div class="nnplus__form-group clearfix"><span class="nnplus__form-group-title pull-left font17">Беременность на сроках:</span><div class="pull-right w230 text-center"><div class="clearfix"><div class="nnplus__form-group--inline pull-left"><span class="nnplus__form-group-title--sm">недель: </span><input type="text" class="nnplus__form-input nnplus__form-input--sm"></div><div class="nnplus__form-group--inline pull-right"><span class="nnplus__form-group-title--sm">дней: </span><input type="text" class="nnplus__form-input nnplus__form-input--sm"></div></div></div></div></div>';                                            
+ var abortTemplate2 = '<div class="nnplus__form-group--pregnantDevelop"><div class="remove-bl"><div class="nnplus__form-group clearfix"><span class="nnplus__form-group-title">Беременность в годы: </span> <input type="text" class="nnplus__form-input nnplus__form-input--md"></div><div class="nnplus__form-group clearfix"><span class="nnplus__form-group-title pull-left font17">Беременность на сроках:</span><div class="pull-right w230 text-center"><div class="clearfix"><div class="nnplus__form-group--inline pull-left"><span class="nnplus__form-group-title--sm">недель: </span><input type="text" class="nnplus__form-input nnplus__form-input--sm"></div><div class="nnplus__form-group--inline pull-right"><span class="nnplus__form-group-title--sm">дней: </span><input type="text" class="nnplus__form-input nnplus__form-input--sm"></div></div></div></div></div>';                                            
 
   ////document is ready
   $(document).ready(function(){
@@ -136,20 +176,20 @@ var errorMessage = $('<div class="error-message">Ответье, пожалуй�
     });
   });
   //toCurrentPregnant
-  $('body').on('click', '.toCurrentPregnant', function(){
+  // $('body').on('click', '.toCurrentPregnant', function(){
 
-    if( nnplusValid( $('.nnplus__previous-pregnant .nnplus__isvalid') )  ){
+  //   if( nnplusValid( $('.nnplus__previous-pregnant .nnplus__isvalid') )  ){
 
-         $('.nnplus__previous-pregnant').fadeOut(200, function(){
-                  $('.nnplus__current-pregnant').fadeIn(200)
-            });
+  //        $('.nnplus__previous-pregnant').fadeOut(200, function(){
+  //                 $('.nnplus__current-pregnant').fadeIn(200)
+  //           });
 
-    }else{
-      slider.addErrorMessage($(this).closest('.item'));
-    }
+  //   }else{
+  //     slider.addErrorMessage($(this).closest('.item'));
+  //   }
 
 
-  });
+  // });
 
   ///////////////////////////////nnplus__checkbox-input
   $('body').on('change', '.nnplus__checkbox-input', function(){
@@ -253,11 +293,19 @@ var errorMessage = $('<div class="error-message">Ответье, пожалуй�
     }
     //////toPreviousPregnant
     if ( $('#firstPregnancyNo').is(':checked') ){
-      $('.nnplus__current-pregnant').fadeOut(200, function(){
-        $('.nnplus__previous-pregnant').fadeIn(200).find('.nnplus__form-input.w230').addClass('nnplus__isvalid')
-      });
+
+      // $('.nnplus__current-pregnant').fadeOut(200, function(){
+      //   $('.nnplus__previous-pregnant').fadeIn(200).find('.nnplus__form-input.w230').addClass('nnplus__isvalid')
+      // });
+      $('.nnplus__current-pregnant .controls .next').html('Информация <br />о предыдущих беременностях');
+      slider.setPregnant(false,true);
+
+
     }else{
         // $('.nnplus__previous-pregnant').find('.nnplus__isvalid').removeClass('nnplus__isvalid');
+        $('.nnplus__current-pregnant .controls .next').html('Генетический анамнез');
+        slider.setPregnant(true,false);
+        $(".nnplus__previous-pregnant").find('.nnplus__isvalid').removeClass('nnplus__isvalid');
     }
     //////
   });
@@ -280,6 +328,12 @@ $('body').on('click', '.addYear', function(){
   if( $(this).hasClass('addYear2') ){
     $(abortTemplate2).insertBefore($(this));
   }
+
+});
+
+$('body').on('click', '.remove-bl', function(){
+
+  $(this).parent("div").remove();
 
 });
 
