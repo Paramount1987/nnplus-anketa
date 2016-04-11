@@ -307,6 +307,13 @@ var errorMessage = $('<div class="error-message">Ответье, пожалуй�
         $(".nnplus__previous-pregnant").find('.nnplus__isvalid').removeClass('nnplus__isvalid');
     }
     //////
+        //other ill
+    if ( $('#checkbox-otherIll').is(':checked') ){
+        
+        $('#hidden-fields--otherIll').slideDown();
+    }else{
+      $('#hidden-fields--otherIll').slideUp();
+    }
   });
   ////end nnplus__checkbox-input
 //cnahge input invalid
