@@ -192,6 +192,29 @@ var errorMessage = $('<div class="error-message">Ответье, пожалуй�
 
   ///////////////////////////////nnplus__checkbox-input
   $('body').on('change', '.nnplus__checkbox-input', function(){
+    //surrogate
+    if ( $('#surrogateYes').is(':checked') ){
+        
+        $('#hidden-fields--surrogate').slideDown();
+    }else{
+      $('#hidden-fields--surrogate').slideUp();
+    }
+
+    //eco
+    if ( $('#ecoYes').is(':checked') ){
+        
+        $('#hidden-fields--eco').slideDown();
+    }else{
+      $('#hidden-fields--eco').slideUp();
+      $('#hidden-fields--eco2').slideUp();
+    }
+
+    if ( $('#ecoYes2').is(':checked') &&  $('#ecoYes').is(':checked')){
+        
+        $('#hidden-fields--eco2').slideDown();
+    }else{
+      $('#hidden-fields--eco2').slideUp();
+    }
 
     //medications
     if ( $('#medicationsYes').is(':checked') ){
